@@ -1,0 +1,30 @@
+[
+    {
+        "userImage": "https://i.ibb.co/9mJfDQ55/Rectangle-11.png",
+        "userName": "Theresa Webb",
+        "timestamp": "5 mins ago",
+        "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "currentFeelingIcon": "🥴"
+    },
+    {
+        "userImage": "https://i.ibb.co/9mJfDQ55/Rectangle-11.png",
+        "userName": "Theresa Webb",
+        "timestamp": "5 mins ago",
+        "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "currentFeelingIcon": "🤞"
+    },
+    {
+        "userImage": "https://i.ibb.co/wNCSM0M3/Rectangle-14.png",
+        "userName": "John Doe",
+        "timestamp": "15 mins ago",
+        "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "currentFeelingIcon": "💀"
+    },
+    {
+        "userImage": "https://i.ibb.co/bMSNjTnF/Rectangle-18.png",
+        "userName": "Jane Doe",
+        "timestamp": "5 mins ago",
+        "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "currentFeelingIcon": "💀"
+    }
+]

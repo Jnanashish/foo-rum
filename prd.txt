@@ -1,0 +1,50 @@
+https://www.figma.com/proto/9il6CZ3STFOcYutSsGNA2v/Front-end-hiring-assignment?node-id=1-2&t=gR0TS9whDhfSJQqI-1&starting-point-node-id=1%3A2
+
+
+The goal of the task is to build a mini frontend app with an auth flow provided in the design linked above. (Just the frontend, NO NEED to create a backend or APIs)
+
+- You are free to choose your choice of framework [React (preferred) / Vue / Svelte / Next]
+- You are free to choose either JavaScript or TypeScript (highly preferred)
+- You are free to choose your choice of CSS framework [TailwindCSS (preferred) / styled-components / stitches / anything else]The twist
+
+### Core Features :
+
+The app consists of three main pages: Feed, Sign In, and Sign Up.
+
+- Feed page serves as the landing page
+- For unauthenticated users, any interaction on feed triggers a sign in/sign up modal
+- After authentication, users can fully interact with the feed page
+- Users can also sign in/sign up from dedicated auth pages.
+
+### Feed Page Interactions :
+
+- Post Editor: Only implement input field and publish button functionality. Other buttons should display an alert saying 'function not implemented'
+- New Posts: Successfully published posts should appear in the feed
+- Existing Posts: All interactive elements should show same alert - no need to implement full functionality
+
+### Evaluation criteria :
+
+- Quality of UI and animations.
+- Dependencies used (Use of UI libraries is strongly discouraged).
+- Modularity and maintainability of the code
+- API design of the components / functions *(API here isn't REST API).*
+- How well you grasp and implement the UX / functionality of the given design.
+
+### After Completion :
+
+- Deploy the app on a platform of your choice to provide a live preview.
+- Push the code to a GitHub repository.
+- Share the links to both the live preview and the GitHub repository.
+- Quick note about what was fun/challenging - optional
+
+### Bonus points if you add
+
+- Some slick animations
+- TypeScript
+
+### Test accounts to include for us to test
+
+```
+demo@example.com / password123
+test@user.com / testpass
+```
