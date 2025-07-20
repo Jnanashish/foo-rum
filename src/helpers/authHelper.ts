@@ -3,13 +3,13 @@ const demoUsers = [
         email: "demo@example.com",
         password: "password123",
         name: "Demo User",
-        profilePicture: "https://via.placeholder.com/150",
+        profilePicture: "https://i.ibb.co/Jj2hcmW1/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-wi.jpg",
     },
     {
         email: "test@user.com",
         password: "testpass",
         name: "Test User",
-        profilePicture: "https://via.placeholder.com/150",
+        profilePicture: "https://i.ibb.co/Jj2hcmW1/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-wi.jpg",
     },
 ];
 
@@ -43,7 +43,7 @@ export const storeUserDetails = (email: string, password: string) => {
         email,
         password,
         isAuthenticated: true,
-        profilePicture: "https://via.placeholder.com/150",
+        profilePicture: "https://i.ibb.co/Jj2hcmW1/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-wi.jpg",
     }
     localStorage.setItem("user", JSON.stringify(userData));
     sessionStorage.setItem("userSession", JSON.stringify(userData));

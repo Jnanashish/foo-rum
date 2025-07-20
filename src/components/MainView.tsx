@@ -4,11 +4,13 @@ import data from '../Data/index.json';
 import LoginForm from './LoginForm';
 
 import Modal from './Modal';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import UserContext from '../context/userContext';
 
 function MainView() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [comments, setComments] = useState(data);
+    const user = useContext(UserContext);
 
     const handleModalOpen = () => {
         setIsModalOpen(true);
@@ -16,8 +18,8 @@ function MainView() {
 
     const handleSubmitClick = (value: string) => {
         const newComment = {
-            "userImage": "https://i.ibb.co/9mJfDQ55/Rectangle-11.png",
-            "userName": "Theresa Webb",
+            "userImage": user?.user?.profilePicture || "https://i.ibb.co/Jj2hcmW1/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-wi.jpg",
+            "userName": user?.user?.email || "",
             "timestamp": new Date().toLocaleString(),
             "commentText": value,
             "currentFeelingIcon": "🥴"
