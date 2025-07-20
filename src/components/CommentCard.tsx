@@ -19,8 +19,14 @@ const CommentCard: React.FC<CommentCardProps> = ({
     commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     currentFeelingIcon = "🥴"
 }) => {
+
+        // show info toast 
+        const showInfoToast = (event: React.MouseEvent<HTMLButtonElement>) => {
+            (window as any).showInfoToast(event.currentTarget);
+        };
+
     return (
-        <div className="bg-[#00000008] rounded-[21px] p-[8px] pb-0 max-w-[568px] h-auto mx-auto">
+        <div className="bg-[#00000008] rounded-[21px] p-[8px] pb-0 w-[568px] h-auto mx-auto">
             <div className='w-full h-full p-[14px] bg-white rounded-[18px] grid grid-cols-[auto_1fr] gap-x-3 gap-y-[10px] border-[1px] border-[#0000001A] border-solid shadow-[0px_4px_9px_0px_#0000000D]'>
                 {/* Left column: profile pic and emoji */}
                 <div className="flex flex-col items-center gap-[10px] pt-1">
@@ -55,15 +61,15 @@ const CommentCard: React.FC<CommentCardProps> = ({
 
             {/* Action buttons */}
             <div className="flex items-center gap-6 h-[42px] px-[15px]">
-                <button className=" w-[18px] h-[18px]">
+                <button onClick={showInfoToast} className=" w-[18px] h-[18px]">
                     <img src={likeIcon} alt="like icon" />
                 </button>
 
-                <button className="w-[18px] h-[18px]">
+                <button onClick={showInfoToast} className="w-[18px] h-[18px]">
                     <img src={replyIcon} alt="reply icon" />
                 </button>
 
-                <button className="w-[18px] h-[18px]">
+                <button onClick={showInfoToast} className="w-[18px] h-[18px]">
                     <img src={shareIcon} alt="more icon" />
                 </button>
             </div>

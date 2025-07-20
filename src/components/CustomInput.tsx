@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import dropdownIcon from '../assets/chevron_down.svg';
 import textBoldIcon from '../assets/text-bold.svg';
@@ -15,13 +15,16 @@ import sendIcon from '../assets/send.svg';
 import videoCameraIcon from '../assets/video-camera.svg';
 import micIcon from '../assets/mic.svg';
 import plusIcon from '../assets/plus.svg';
+import UserContext from '../context/userContext';
 
 interface CustomInputProps {
     handleSubmitClick: (value: string) => void;
+    handleModalOpen: () => void;
 }
 
-const CustomInput = ({ handleSubmitClick }: CustomInputProps) => {
+const CustomInput = ({ handleSubmitClick, handleModalOpen }: CustomInputProps) => {
     const [inputComment, setInputComment] = useState<string>("");
+    const user = useContext(UserContext);
 
 
     // show info toast 
@@ -34,6 +37,15 @@ const CustomInput = ({ handleSubmitClick }: CustomInputProps) => {
         if (!!inputComment) {
             handleSubmitClick(inputComment);
             setInputComment("");
+        }
+    };
+
+    const handleUserInteraction = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        console.log("user", user);
+        if (!!user?.user?.isAuthenticated) {
+            setInputComment(event.target.value);
+        } else {
+            handleModalOpen();
         }
     };
 
@@ -95,7 +107,7 @@ const CustomInput = ({ handleSubmitClick }: CustomInputProps) => {
                 <div className='px-3 py-2 min-h-[120px]'>
                     <div className='flex items-start'>
                         <span className='mt-[2px] h-[18px] w-[18px] flex items-center justify-center'><img src={emotionSmileIcon} alt="emotion smile icon" /></span>
-                        <textarea className='ml-[8px] w-full h-full resize-none outline-none border-none bg-transparent font-[500] text-[14px] text-[#000000] placeholder:text-[#00000066]' placeholder='How are you feeling today?' value={inputComment} onChange={(e) => setInputComment(e.target.value)} />
+                        <textarea className='ml-[8px] w-full h-full resize-none outline-none border-none bg-transparent font-[500] text-[14px] text-[#000000] placeholder:text-[#00000066]' placeholder='How are you feeling today?' value={inputComment} onChange={handleUserInteraction} />
                     </div>
                 </div>
 

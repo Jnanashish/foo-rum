@@ -1,10 +1,24 @@
 import { createContext } from "react";
 
-const UserContext = createContext({
+// Define the User interface based on the structure used in authHelper
+interface User {
+    email: string;
+    password: string;
+    name?: string;
+    profilePicture?: string;
+    isAuthenticated?: boolean;
+}
+
+// Define the UserContext interface
+interface UserContextType {
+    user: User | null;
+}
+
+const UserContext = createContext<UserContextType>({
     user: null,
-    setUser: (user: any) => {}
 });
 
 export const UserProvider = UserContext.Provider;
 
 export default UserContext;
+export type { User, UserContextType };

@@ -14,6 +14,12 @@ function Header() {
         window.location.href = "/";
     }
 
+    const redirectToSignin = () => {
+        window.location.href = "/signin";
+    }
+
+    console.log("isSigninPage", user);
+
     return (
         <div className='fixed top-0 left-0 w-full z-50 mx-auto px-[42px] py-[28px] pb-[16px] flex justify-between items-center bg-[#FFFFFF]'>
             <span className='flex items-center gap-2'>
@@ -21,13 +27,20 @@ function Header() {
                 <p className='text-[16px] font-bold'>foo-rum</p>
             </span>
 
-            {!isSigninPage ?
-                (<span className='flex items-center gap-2'>
-                    <p className='text-[14px] font-semibold'>Login</p>
-                    <img src={signinIcon} alt="signin" />
-                </span>
-                )
-                : <p onClick={redirectToHome} className='text-[14px] font-[600] text-[#000000] cursor-pointer'>Back to home</p>}
+            {user && <span className='flex items-center gap-2'>
+                <p className='text-[14px] font-semibold'>Hi 👋, {user.email}</p>
+            </span>}
+
+            {
+                !user &&
+                (!isSigninPage ?
+                    (<span onClick={redirectToSignin} className='flex items-center gap-2 cursor-pointer'>
+                        <p className='text-[14px] font-semibold'>Login</p>
+                        <img src={signinIcon} alt="signin" />
+                    </span>
+                    )
+                    : <p onClick={redirectToHome} className='text-[14px] font-[600] text-[#000000] cursor-pointer'>Back to home</p>)
+            }
         </div>
     )
 }

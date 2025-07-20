@@ -46,5 +46,6 @@ export const storeUserDetails = (email: string, password: string) => {
         profilePicture: "https://via.placeholder.com/150",
     }
     localStorage.setItem("user", JSON.stringify(userData));
+    sessionStorage.setItem("userSession", JSON.stringify(userData));
     window.location.href = "/";
 }

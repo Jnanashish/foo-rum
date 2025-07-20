@@ -1,13 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/userContext';
+import { useEffect, useState } from 'react';
 
 import Home from './page/home';
 import Header from './components/Header';
 import Signin from './page/signin';
 
 function App() {
+    const [userValue, setUserValue] = useState(null);
+    useEffect(() => {
+        const user = sessionStorage.getItem("userSession");
+        if (!!user) {
+            setUserValue(JSON.parse(user));
+        }
+    }, []);
+
     return (
-        <UserProvider value={{ user: null, setUser: () => { } }}>
+        <UserProvider value={{ user: userValue }}>
             <Header />
 
             <Router>
