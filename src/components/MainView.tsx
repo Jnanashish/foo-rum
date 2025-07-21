@@ -20,7 +20,7 @@ function MainView() {
         const newComment = {
             "userImage": user?.user?.profilePicture || "https://i.ibb.co/Jj2hcmW1/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-wi.jpg",
             "userName": user?.user?.email || "",
-            "timestamp": new Date().toLocaleString(),
+            "timestamp": "Just now",
             "commentText": value,
             "currentFeelingIcon": "🥴"
         }
@@ -39,7 +39,7 @@ function MainView() {
                     ))
                 }
             </div>
-            <Modal isOpen={isModalOpen} onClose={handleModalOpen}>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <LoginForm />
             </Modal>
         </>

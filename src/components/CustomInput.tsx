@@ -41,7 +41,6 @@ const CustomInput = ({ handleSubmitClick, handleModalOpen }: CustomInputProps) =
     };
 
     const handleUserInteraction = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        console.log("user", user);
         if (!!user?.user?.isAuthenticated) {
             setInputComment(event.target.value);
         } else {

@@ -17,6 +17,7 @@ const demoUsers = [
 export const authenticateUser = (email: string, password: string) => {
     const user = demoUsers.find((user) => user.email === email && user.password === password);
     if (!!user) {
+        sessionStorage.setItem("userSession", JSON.stringify({ ...user, isAuthenticated: true }));
         window.location.href = "/";
         return true;
     } else {

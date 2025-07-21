@@ -3,11 +3,12 @@ import React from 'react'
 import likeIcon from '../assets/like_icon.svg'
 import replyIcon from '../assets/comment_icon.svg'
 import shareIcon from '../assets/share_icon.svg'
+import { timeStamp } from 'console';
 
 interface CommentCardProps {
     userImage?: string;
     userName?: string;
-    timestamp?: string;
+    timestamp?: number | string;
     commentText?: string;
     currentFeelingIcon?: string;
 }
@@ -24,6 +25,7 @@ const CommentCard: React.FC<CommentCardProps> = ({
         const showInfoToast = (event: React.MouseEvent<HTMLButtonElement>) => {
             (window as any).showInfoToast(event.currentTarget);
         };
+
 
     return (
         <div className="bg-[#00000008] rounded-[21px] p-[8px] pb-0 w-[568px] h-auto mx-auto">

@@ -24,7 +24,7 @@ const LoginForm = () => {
         if (password === "") {
             newError.password = true;
         }
-        if (!isSignin && repeatPassword === "") {
+        if (!isSignin && (repeatPassword === "" || repeatPassword !== password)) {            
             newError.repeatPassword = true;
         }
         setError(newError);
@@ -33,8 +33,8 @@ const LoginForm = () => {
         if (isSignin && !error.email && !error.password) {
             setIsUserValid(authenticateUser(email, password));
 
-        } else if (!isSignin && !error.email && !error.password && !error.repeatPassword) {
-            // store user details in local storage in case of sign up
+        } else if (!isSignin && !newError.email && !newError.password && !newError.repeatPassword) {
+            // store user details in local storage in case of sign up            
             storeUserDetails(email, password);
         } 
     }
@@ -85,7 +85,7 @@ const LoginForm = () => {
                         <div className='w-[80%] mb-[26px]'>
                             <p className='text-[14px] font-[600] text-[#000000] mb-[8px] ml-[4px]'>Repeat Password</p>
                             <FormInput placeholder="Enter your password again" type="password" value={repeatPassword} onChange={onRepeatPasswordChange} />
-                            {error.repeatPassword && <p className='text-[12px] ml-[2px] font-[400] text-[#FF0000] mt-[4px]'>Password is required</p>}
+                            {error.repeatPassword && <p className='text-[12px] ml-[2px] font-[400] text-[#FF0000] mt-[4px]'>Password does not match</p>}
                         </div>
                     )}
 
